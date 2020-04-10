@@ -5,8 +5,8 @@ const mysql = require("mysql");
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
-  database: "cat_db"
+  password: "root1049",
+  database: "burgers_db"
 });
 
 // Make connection.
