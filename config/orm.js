@@ -20,6 +20,7 @@ function convertSql(object) {
           arr.push(key + "=" + value);
     }
   }
+  return array.toString();
 }
 
 var orm = {
