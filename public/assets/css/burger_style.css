@@ -1,6 +1,9 @@
-li {
-  padding: 5px;
-  margin: 5px;
+body {
+  height: 100%;
+  background-color: #faebd7
+} 
+
+.container-fluid{
   background: #faebd7;
 }
 
@@ -8,12 +11,46 @@ li {
   font-weight: bold;
 }
 
-.create-update-form {
+.create-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  background-color: #faebd7;
 }
 
 .form-group {
   margin-bottom: 5px;
+  text-align: center;
+}
+
+img {
+  width: 20%;
+  height: 20%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbotron {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #faebd7;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+h3 {
+  text-align: center;
+}
+
+.list-group-item{
+  padding: 5px;
+  margin: 5px;
+  background-color: #fff6eb;
 }
