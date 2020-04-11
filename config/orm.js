@@ -1,26 +1,38 @@
 const connection = require("../config/connection.js");
 
 function makeQuestionMarks(num) {
-    var array = [];
+  var array = [];
 
-    for(let i = 0; i < num; i++) {
-        array.push("?");
-    }
-    return array.toString();
+  for (let i = 0; i < num; i++) {
+    array.push("?");
+  }
+  return array.toString();
 }
-// * `updateOne()`
 
-const orm = {
-    selectAll: function(tableInput, cb) {
+function convertSql(object) {
+    var array = [];
+    for (var key in object) {
+        var value = object[key];
+        if (Object.hasOwnProperty.call(object, key)) {
+          if (typeof value === "string" && value.indexOf(" ") >= 0) {
+            value = "'" + value + "'";
+          }
+          arr.push(key + "=" + value);
+    }
+  }
+}
+
+var orm = {
+  selectAll: function (tableInput, cb) {
     var allQuery = `SELECT * FROM ${tableInput}`;
     connection.query(allQuery, function (err, res) {
-        if (err) {
-            throw err;
-        }
-        cb(res);
+      if (err) {
+        throw err;
+      }
+      cb(res);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
+  insertOne: function (table, cols, vals, cb) {
     var oneQuery =
       "INSERT INTO " +
       table +
@@ -32,13 +44,40 @@ const orm = {
       ") ";
 
     console.log(oneQuery);
-    connection.query(oneQuery, vals, function(err, res) {
+    connection.query(oneQuery, vals, function (err, res) {
       if (err) {
         throw err;
       }
       cb(res);
     });
   },
-};
+  updateOne: function(table, objColumnVals, condition, cb) {
+    var updateOneQuery =
+      "UPDATE " +
+      table +
+      " SET " +
+      convertSql(objColumnVals) +
+      " WHERE " +
+      condition;
 
+      console.log(updateOneQuery);
+      connection.query(updateOneQuery, function (err, res) {
+      if (err) {
+        throw err;
+      }
+      cb(res);
+    });
+  },
+  deleteOne: function(table, condition, cb) {
+      var delQuery = `DELETE FROM ${table} WHERE + ${condition};`;
+
+      console.log(delQuery);
+      connection.query(delQuery, function (err, res) {
+      if (err) {
+        throw err;
+      }
+      cb(res);
+  });
+ }
+};
 module.exports = orm;
