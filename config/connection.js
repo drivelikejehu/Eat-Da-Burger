@@ -11,7 +11,7 @@ var connection;
   password: "root1049",
   database: "burgers_db"
  });
-};
+}
 
 connection.connect(function(err) {
   if (err) {
