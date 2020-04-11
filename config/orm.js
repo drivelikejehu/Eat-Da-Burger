@@ -9,15 +9,34 @@ const connection = require("../config/connection.js");
 // * `updateOne()`
 
 const orm = {
-    selectAll: function(table, cb) {
-    var selectQuery = `SELECT * FROM ${table};`;
-    connection.query(selectQuery, function (err, res) {
+    selectAll: function(tableInput, cb) {
+    var dbQuery = "SELECT * FROM " + tableInput + ";";
+    connection.query(dbQuery, function (err, res) {
         if (err) {
             throw err;
         }
-        cb(result);
-    })
-    }
-}
+        cb(res);
+    });
+  },
+  insertOne: function(table, cols, vals, cb) {
+    var dbQuery =
+      "INSERT INTO " +
+      table +
+      " (" +
+      cols.toString() +
+      ") " +
+      "VALUES (" +
+      makeQmarks(vals.length) +
+      ") ";
+
+    console.log(dbQuery);
+    connection.query(dbQuery, vals, function(err, res) {
+      if (err) {
+        throw err;
+      }
+      cb(res);
+    });
+  },
+};
 
 module.exports = orm;
