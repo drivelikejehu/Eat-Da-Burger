@@ -17,7 +17,7 @@ function convertSql(object) {
           if (typeof value === "string" && value.indexOf(" ") >= 0) {
             value = "'" + value + "'";
           }
-          arr.push(key + "=" + value);
+          array.push(key + "=" + value);
     }
   }
   return array.toString();
