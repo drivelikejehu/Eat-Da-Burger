@@ -1,0 +1,45 @@
+
+
+<div class="container-fluid">
+  <div class="jumbotron">
+  <img src="/assets/img/burger.png" alt="burger" class="center"/>
+  <h2> Eat Da Burger! </h2>
+  </div>
+    <div class="row">
+    <div class="col-xs-6">
+      <ol>
+  {{#each burgers}}
+    {{#unless devoured}}
+      <li class="list-group-item">{{burger_name}} <button class="devour-burger" data-id="{{id}}">Devour It!</button></li>
+    {{/unless}}
+  {{/each}}
+  </ol>
+    </div>
+    <div class="col-xs-6">
+      <ol class="list-group">
+      {{#each burgers}}
+    {{#if devoured}}
+      <li class="list-group-item">{{burger_name}}</li>
+    {{/if}}
+  {{/each}}
+  </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-4">
+    <h3>Add a Burger</h3>
+<form class="create-form">
+  <div class="form-group">
+    <label for="newburger">Name of burger:</label>
+    <input type="text" id="newburger" name="burger_name">
+  </div>
+  <button type="submit" class="btn btn-warning center"><h4>Order Up!</h4></button>
+</form> 
+    <div class="col-xs-4">
+    </div>
+  </div>
+</div>
+
+
