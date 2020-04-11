@@ -1,17 +1,19 @@
 const connection = require("../config/connection.js");
 
-// * In the `orm.js` file, create the methods that will execute the necessary MySQL 
-//commands in the controllers. These are the methods you will need to use in order 
-//to retrieve and store data in your database.
+function makeQuestionMarks(num) {
+    var array = [];
 
-// * `selectAll()`
-// * `insertOne()`
+    for(let i = 0; i < num; i++) {
+        array.push("?");
+    }
+    return array.toString();
+}
 // * `updateOne()`
 
 const orm = {
     selectAll: function(tableInput, cb) {
-    var dbQuery = "SELECT * FROM " + tableInput + ";";
-    connection.query(dbQuery, function (err, res) {
+    var allQuery = `SELECT * FROM ${tableInput}`;
+    connection.query(allQuery, function (err, res) {
         if (err) {
             throw err;
         }
@@ -19,18 +21,18 @@ const orm = {
     });
   },
   insertOne: function(table, cols, vals, cb) {
-    var dbQuery =
+    var oneQuery =
       "INSERT INTO " +
       table +
       " (" +
       cols.toString() +
       ") " +
       "VALUES (" +
-      makeQmarks(vals.length) +
+      makeQuestionMarks(vals.length) +
       ") ";
 
-    console.log(dbQuery);
-    connection.query(dbQuery, vals, function(err, res) {
+    console.log(oneQuery);
+    connection.query(oneQuery, vals, function(err, res) {
       if (err) {
         throw err;
       }
