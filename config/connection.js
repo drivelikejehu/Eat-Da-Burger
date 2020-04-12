@@ -11,7 +11,7 @@ user: "root",
 password: "root1049",
 database: "burgers_db"
 });
-};
+}
 
 connection.connect();
 
