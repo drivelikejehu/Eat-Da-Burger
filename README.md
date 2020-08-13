@@ -1,17 +1,16 @@
-# Unit 12: Node Express Handlebars - Eat Da Burger
+# Node Express Handlebars - Eat Da Burger
 
 https://immense-thicket-63740.herokuapp.com/
 
 ### Description
 
-For this project we created a burger app that created 'burgers', 'devoured' said burgers with a button, that would display on the other side of the page.
-We designed our site with the model-view-controller pattern using MySql, Node, Express, Express Handlebars, and the Object Relational Model.
+Behold the penultimate greasy by-product of American institution. The burger is a complete meal, tucked between two slices of satiation. From charcoal barbecues to after-hour drive-thrus, Eat Da Burger recaptures the satisfaction for what hits the spot.
 
 ### User Story
 
-AS A burger enthusiast who wants to devour burgers
-I WANT to submit a name of a burger
-SO THAT I can devour it.
+AS A person who craves burgers
+I WANT to order a customized sandwich
+SO THAT I can satiate my mental hunger
 
 ### Screenshots 
 
@@ -19,6 +18,14 @@ SO THAT I can devour it.
 ![Screenshot of added burger.](public/assets/img/eat2.png)
 ![Screenshot of devoured burgers.](public/assets/img/eat3.png)
 
-### Challenges
+### Technologies
 
-The majority of this assignment was understanding the complex nature of the Object relational model. It is a stepping stone to sequelize, which will alleviate some of the drawback of the orm. Moreover, the documentation for deploying to Heroku is completely dated and lost in today's times.
+* Node.js
+* Express
+* Express Handlebars
+* MySql
+  
+### License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
