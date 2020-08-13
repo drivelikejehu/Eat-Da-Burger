@@ -2,7 +2,7 @@
 
 https://immense-thicket-63740.herokuapp.com/
 
-### Description
+### Motivation
 
 Behold the penultimate greasy by-product of American institution. The burger is a complete meal, tucked between two slices of satiation. From charcoal barbecues to after-hour drive-thrus, Eat Da Burger recaptures the satisfaction for what hits the spot.
 
