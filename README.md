@@ -1,4 +1,5 @@
 # Node Express Handlebars - Eat Da Burger
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 https://immense-thicket-63740.herokuapp.com/
 
@@ -27,5 +28,5 @@ SO THAT I can satiate my mental hunger
   
 ### License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Distributed under the MIT license.
 
